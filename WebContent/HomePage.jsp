@@ -98,6 +98,9 @@ function displayMyChildCareList() {
 			      	  </form>		
 			    	</div>
 			</li>
+			<li>
+			<a href="adminLogin.jsp" id="myadmin"><u>ADMIN</u></a>
+			</li>
 	</ul>
 </nav>
 
