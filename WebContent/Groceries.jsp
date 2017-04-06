@@ -167,8 +167,6 @@ function displayMyChildCareList() {
 				<li>Cream Cheese</li>
 				<li>Eggs & Egg Substitutes</li>
 				<li>Milk & Cream</li>
-				<li>Milk Substitutes</li>
-				<li>Packaged Cheese</li>
 				<li>Refrigerated Doughs</li>
 				<li>Refrigerated Salsas, Dips & Spreads</li>
 				<li>Sour Cream</li>
@@ -181,13 +179,7 @@ function displayMyChildCareList() {
 				<li>Bacon</li>
 				<li>Beef</li>
 				<li>Chicken</li>
-				<li>Foie Gras & Pâtés</li>
-				<li>Frozen Meats</li>
-				<li>Frozen Seafood</li>
-				<li>Hot Dogs & Franks</li>
 				<li>Lamb</li>
-				<li>Meat Substitutes</li>
-				<li>Packaged & Sliced Deli Meats</li>
 				<li>Pork</li>
 				<li>Sausages</li>
 				<li>Seafood</li>
@@ -209,28 +201,17 @@ function displayMyChildCareList() {
 		
 			<td color: #666666;>
 				<ul style="list-style: none;">
-				<li>Applesauce & Fruit Cups</li>
 				<li>Chips & Crisps</li>
 				<li>Cookies</li>
 				<li>Crackers</li>
-				<li>Dried Fruit & Raisins</li>
-				<li>Fruit Leather</li>
 				<li>Fruit Snacks</li>
 				<li>Granola & Nutrition Bars</li>
-				<li>Ice Cream Cones & Toppings</li>
-				<li>Jerky & Dried Meats</li>
+				<li>Ice Cream</li>
 				<li>Nuts & Seeds</li>
-				<li>Party Mix</li>
 				<li>Popcorn</li>
-				<li>Pork Rinds</li>
 				<li>Pretzels</li>
 				<li>Puffed Snacks</li>
-				<li>Rice Cakes, Chips & Crackers</li>
-				<li>Salsas, Dips & Spreads</li>
-				<li>Seaweed Snacks</li>
-				<li>Snack Cakes & Pastries</li>
-				<li>Trail Mix</li>
-				<li>Wasabi Peas</li>
+				<li>Rice Cakes</li>
 				</ul>
 			</td>
 		
@@ -241,8 +222,6 @@ function displayMyChildCareList() {
 				<li>Cakes</li>
 				<li>Desserts</li>
 				<li>Fresh Bakery Breads</li>
-				<li>Packaged Breads</li>
-				<li>Pastry Shells & Crusts</li>
 				<li>Pizza Crusts</li>
 				</ul>
 			</td>
@@ -261,11 +240,7 @@ function displayMyChildCareList() {
 				<ul style="list-style: none;">
 				<li>Antipasto</li>
 				<li>Beans & Peas</li>
-				<li>Fruits</li>
-				<li>Meat Substitutes</li>
-				<li>Meat, Poultry & Seafood</li>
 				<li>Sloppy Joe Mix</li>
-				<li>Vegetables</li>
 				</ul>
 			</td>
 		</tr>
