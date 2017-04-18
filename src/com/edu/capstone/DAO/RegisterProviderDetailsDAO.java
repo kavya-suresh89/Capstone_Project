@@ -34,18 +34,18 @@ public class RegisterProviderDetailsDAO {
             		"insert into childcare(categoryid, name, price_per_hour, location, experience, description, subjects, phonenumber, email, available, mode, image) values(?,?,?,?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS);  
             		
             		
-            		ps.setInt(1,childVO.getCatogoryId());
+            		ps.setInt(1,childVO.getCategoryid());
             		ps.setString(2, childVO.getName());
-            		ps.setString(3, childVO.getPricePerHr());
+            		ps.setString(3, childVO.getPrice_per_hour());
             		ps.setString(4, childVO.getLocation());
             		ps.setString(5,childVO.getExperience());
-					ps.setString(6, childVO.getDesc());
+					ps.setString(6, childVO.getDescription());
             		ps.setString(7, childVO.getSubjects());
-            		ps.setString(8, childVO.getPhoneNo());
+            		ps.setString(8, childVO.getPhonenumber());
 					ps.setString(9, childVO.getEmail().toLowerCase());
-            		ps.setString(10, childVO.getAvailability());
+            		ps.setString(10, childVO.getAvailable());
             		ps.setString(11, childVO.getMode());
-            		ps.setString(12, childVO.getImageUrl());
+            		ps.setString(12, childVO.getImage());
             		
             		ps.executeUpdate(); 
             		
