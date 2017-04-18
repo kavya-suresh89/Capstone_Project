@@ -93,8 +93,8 @@ function displayMyChildCareList() {
 				<a href="#" onclick="displayMyChildCareList();" id="myCares" class=""><u>CHILD CARE SERVICES</u></a>
 					<div class="" id="myCaresList" style="display:none;">
 			      		<form action="ChildCareServices.jsp" method="get">
-					    	<button type="submit" formaction="ChildCareServices.jsp" id="" >Tutors</button>
-			      			<button type="submit" formaction="BabySitters.jsp" id="" >Baby-sitters</button>
+					    	<button type="submit" formaction="ChildCareServlet" name="categoryId" value="13" >Tutors</button>
+			      			<button type="submit" formaction="ChildCareServlet" name="categoryId" value="14">Baby-sitters</button>
 			      	  </form>		
 			    	</div>
 			</li>
