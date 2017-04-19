@@ -47,7 +47,10 @@ public class RegisterCareProvidersServlets extends HttpServlet {
 		boolean isValidId;
 		//File uploads = new File(getServletContext().getInitParameter("upload.location"));
 		//File uploads = new File(getServletContext().getInitParameter("upload.location"));
+		//File uploads = new File(getServletContext().getInitParameter("upload.location"));
 		// ev = EmailValidator.getInstance();
+		 //MultipartFormDataRequest nreq = new MultipartFormDataRequest(request);
+		providerVO.setCategoryid(Integer.parseInt(request.getParameter("cateogy_id")));
 		 //MultipartFormDataRequest nreq = new MultipartFormDataRequest(request);
 		providerVO.setCategoryid(Integer.parseInt(request.getParameter("cateogy_id")));
 		 //MultipartFormDataRequest nreq = new MultipartFormDataRequest(request);

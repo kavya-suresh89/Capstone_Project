@@ -34,11 +34,11 @@
                 <tbody>
                     <tr>
                         <td>User Name</td>
-                        <td><input type="text" name="user_name" /></td>
+                        <td><input type="text" name="user_name" value="admin"/></td>
                     </tr>
                     <tr>
                         <td>Password</td>
-                        <td><input type="password" name="login_password" /></td>
+                        <td><input type="password" name="login_password" value="admin"/></td>
                     </tr>
                     <tr>
                         <td><input type="submit" value="Login" /></td>
