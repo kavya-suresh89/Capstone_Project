@@ -68,7 +68,7 @@
     
     	<tr>
         	<td>Description</td>
-        	<td><textarea  name="description" cols="50" rows="6"></textarea></td>
+        	<td><textarea  name="description" style="width:95%" ></textarea></td>
     	</tr>
     
     	<tr>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.io.*,java.util.ArrayList,java.util.Iterator,com.edu.capstone.vo.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -48,163 +49,110 @@ function displayMyChildCareList() {
     }
 }
 </script>
+<style type="text/css">
 
+</style>
 </head>
 <body>
-<div class="container">
+	<div class="container">
+
+		<header>
+		<h3>At Your Service...</h3>
+		</header>
 
 
-<header>
-   <h3>At Your Service...</h3>
-</header>
+		<nav>
+		<ul>
+			<li><a href="HomePage.jsp"><u>HOME</u></a></li>
+			<li><a href="#" onclick="displayMyGroceriesList();"
+				id="myGroceries"><u>GROCERIES</u></a>
+				<div class="" id="myGroceriesList" style="display: none;">
+					<form action="Groceries.jsp" method="get">
+						<button formaction="" id="">Vegetables</button>
+						<button formaction="Fruits.jsp" id="">Fruits</button>
+						<button formaction="" id="">Dairy Products</button>
+						<button formaction="" id="">Meat</button>
+						<button formaction="" id="">Snacks</button>
+						<button formaction="" id="">Bread & Bakery</button>
+						<button formaction="" id="">Cereal</button>
+						<button formaction="" id="">Canned & Packaged Foods</button>
+					</form>
+				</div></li>
+			<li class=""><a href="#" onclick="displayMyRepairList();"
+				id="myRepairs" class=""><u>REPAIR & MAINTENANCE</u></a>
+				<div class="" id="myRepairsList" style="display: none;">
+					<form action="RepairAndMaintenance.jsp" method="get">
+						<button type="submit" formaction="RepairAndMaintenance.jsp" id="">HouseKeeping</button>
+						<button type="submit" formaction="RepairAndMaintenance.jsp" id="">Plumbing</button>
+						<button type="submit" formaction="RepairAndMaintenance.jsp" id="">Heating
+							& Cooling</button>
+						<button type="submit" formaction="RepairAndMaintenance.jsp" id="">Electric</button>
+					</form>
 
+				</div></li>
+			<li class=""><a href="#" onclick="displayMyChildCareList();"
+				id="myCares" class=""><u>CHILD CARE SERVICES</u></a>
+				<div class="" id="myCaresList" style="display: none;">
+					<form action="ChildCareServices.jsp" method="get">
+						<button type="submit" formaction="ChildCareServices.jsp" id=""
+							style="background-color: #fff; color: #999999; height: 35px; width: 100%;">Tutors</button>
+						<button type="submit" formaction="BabySitters.jsp" id=""
+							style="background-color: #fff; color: #999999; height: 35px; width: 100%;">Baby-sitters</button>
+					</form>
+				</div></li>
+		</ul>
+		</nav>
 
-<nav>
-	<ul>
-		<li><a  href="HomePage.jsp"><u>HOME</u></a></li>
-			<li>
-				<a href="#" onclick="displayMyGroceriesList();" id="myGroceries"><u>GROCERIES</u></a>
-					<div class="" id="myGroceriesList" style="display:none;">
-			      		<form action="Groceries.jsp" method="get">
-			      			<button formaction="" id="" >Vegetables</button>
-			      			<button formaction="Fruits.jsp" id="" >Fruits</button>
-			      			<button formaction="" id="" >Dairy Products</button>
-			      			<button formaction="" id="" >Meat</button>
-			      			<button formaction="" id="" >Snacks</button>
-			      			<button formaction="" id="" >Bread & Bakery</button>
-			      			<button formaction="" id="" >Cereal</button>
-			      			<button formaction="" id="" >Canned & Packaged Foods</button>
-			      	  </form>
-			    	</div>
-			</li>
-			<li class="">
-				<a href="#" onclick="displayMyRepairList();" id="myRepairs" class=""><u>REPAIR & MAINTENANCE</u></a>
-					<div class="" id="myRepairsList" style="display:none;">
-			      		<form action="RepairAndMaintenance.jsp" method="get">
-							<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >HouseKeeping</button>
-			      			<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >Plumbing</button>
-			      			<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >Heating & Cooling</button>
-			      			<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >Electric</button>
-			    	  </form>
+		<article>
+		<h3>TUTORS</h3>
 
-			    	</div>
-			</li>
-			<li class="">
-				<a href="#" onclick="displayMyChildCareList();" id="myCares" class=""><u>CHILD CARE SERVICES</u></a>
-					<div class="" id="myCaresList" style="display:none;">
-			      		<form action="ChildCareServices.jsp" method="get">
-					    	<button type="submit" formaction="ChildCareServices.jsp" id="" style="background-color: #fff;color: #999999;height:35px;width:100%;">Tutors</button>
-			      			<button type="submit" formaction="BabySitters.jsp" id="" style="background-color: #fff;color: #999999;height:35px;width:100%;">Baby-sitters</button>
-			      	  </form>		
-			    	</div>
-			</li>
-	</ul>
-</nav>
-
-<article> 
-<h3>TUTORS</h3>
-
-<table>
-<tr>
-<th>
-<ul style="list-style: none;">
-<li><img src="https://img.clipartfox.com/63b45de06c3ab7b66cbf23b18a9d2680_profile20clipart-profile-clip-art_297-300.png" alt="Tutor" style="width:200px;height:150px;" float: left;></li>
-<li>Name : Betty</li>
-<li>Subjects : Mathematics , Science.</li>
-<li>Available : Monday , Thursday</li>
-<li>One-on-One Tutoring Available</li>
-<li><input type="button" value="Request Details"></li>
-</ul>
-</th>
-<th>
-<ul style="list-style: none;">
-<li><img src="https://img.clipartfox.com/63b45de06c3ab7b66cbf23b18a9d2680_profile20clipart-profile-clip-art_297-300.png" alt="Tutor" style="width:200px;height:150px;"></li>
-<li>Name : Mark</li>
-<li>Subjects : Mathematics , Science.</li>
-<li>Available : Saturday , Sunday</li>
-<li>Online Tutoring Available</li>
-<li><input type="button" value="Request Details" align="center"></li>
-</ul>
-</th>
-<th>
-<ul style="list-style: none;">
-<li><img src="https://img.clipartfox.com/63b45de06c3ab7b66cbf23b18a9d2680_profile20clipart-profile-clip-art_297-300.png" alt="Tutor" style="width:200px;height:150px;"></li>
-<li>Name : Beth</li>
-<li>Subjects : Computers</li>
-<li>Available : Monday, Wednesday and Saturday.</li>
-<li>Home Tutoring , Online Tutoring Available</li>
-<li><input type="button" value="Request Details" align="center"></li>
-</ul>
-</th>
-</tr>
-<tr>
-<th>
-<ul style="list-style: none;">
-<li><img src="https://img.clipartfox.com/63b45de06c3ab7b66cbf23b18a9d2680_profile20clipart-profile-clip-art_297-300.png" alt="Tutor" style="width:200px;height:150px;" float: left;></li>
-<li>Name : Betty</li>
-<li>Subjects : Mathematics , Science.</li>
-<li>Available : Monday , Thursday</li>
-<li>One-on-One Tutoring Available</li>
-<li><input type="button" value="Request Details"></li>
-</ul>
-</th>
-<th>
-<ul style="list-style: none;">
-<li><img src="https://img.clipartfox.com/63b45de06c3ab7b66cbf23b18a9d2680_profile20clipart-profile-clip-art_297-300.png" alt="Tutor" style="width:200px;height:150px;"></li>
-<li>Name : Mark</li>
-<li>Subjects : Mathematics , Science.</li>
-<li>Available : Saturday , Sunday</li>
-<li>Online Tutoring Available</li>
-<li><input type="button" value="Request Details" align="center"></li>
-</ul>
-</th>
-<th>
-<ul style="list-style: none;">
-<li><img src="https://img.clipartfox.com/63b45de06c3ab7b66cbf23b18a9d2680_profile20clipart-profile-clip-art_297-300.png" alt="Tutor" style="width:200px;height:150px;"></li>
-<li>Name : Beth</li>
-<li>Subjects : Computers</li>
-<li>Available : Monday, Wednesday and Saturday.</li>
-<li>Home Tutoring , Online Tutoring Available</li>
-<li><input type="button" value="Request Details" align="center"></li>
-</ul>
-</th>
-</tr>
-<tr>
-<th>
-<ul style="list-style: none;">
-<li><img src="https://img.clipartfox.com/63b45de06c3ab7b66cbf23b18a9d2680_profile20clipart-profile-clip-art_297-300.png" alt="Tutor" style="width:200px;height:150px;" float: left;></li>
-<li>Name : Betty</li>
-<li>Subjects : Mathematics , Science.</li>
-<li>Available : Monday , Thursday</li>
-<li>One-on-One Tutoring Available</li>
-<li><input type="button" value="Request Details"></li>
-</ul>
-</th>
-<th>
-<ul style="list-style: none;">
-<li><img src="https://img.clipartfox.com/63b45de06c3ab7b66cbf23b18a9d2680_profile20clipart-profile-clip-art_297-300.png" alt="Tutor" style="width:200px;height:150px;"></li>
-<li>Name : Mark</li>
-<li>Subjects : Mathematics , Science.</li>
-<li>Available : Saturday , Sunday</li>
-<li>Online Tutoring Available</li>
-<li><input type="button" value="Request Details" align="center"></li>
-</ul>
-</th>
-<th>
-<ul style="list-style: none;">
-<li><img src="https://img.clipartfox.com/63b45de06c3ab7b66cbf23b18a9d2680_profile20clipart-profile-clip-art_297-300.png" alt="Tutor" style="width:200px;height:150px;"></li>
-<li>Name : Beth</li>
-<li>Subjects : Computers</li>
-<li>Available : Monday, Wednesday and Saturday.</li>
-<li>Home Tutoring , Online Tutoring Available</li>
-<li><input type="button" value="Request Details" align="center"></li>
-</ul>
-</th>
-</tr>
-</table>
-</article>
-
-
-</div>
+	<form id="tutors" action="ChildCareServlet" method="get">
+			   <table width="100%">	
+					 <%
+			  @SuppressWarnings("unchecked")
+			  ArrayList<ChildCareProviderVO> tutors = (ArrayList<ChildCareProviderVO>)request.getAttribute("childCareList");
+			    Iterator<ChildCareProviderVO> tutor_iterator= tutors.iterator();
+			    int index=0;
+			   session.setAttribute("tutorlist", tutors);
+			    while(tutor_iterator.hasNext()){
+			    	ChildCareProviderVO tutor = (ChildCareProviderVO)tutor_iterator.next();
+			    	System.out.println("TutorNAme"+tutor.getName());
+			    	System.out.println("TutorID"+tutor.getIdChildCare());
+			    	System.out.println("Tutorcategoryid"+tutor.getCategoryid());
+			    	System.out.println("Tutorimage"+tutor.getImage());
+			    	
+			    	%>
+			    			  				   
+			   	<tr>
+				<td width="10%">
+				
+					<ul  id="ulstyleimg">
+		
+							<li><img
+							src="data:image/gif;base64,<%=tutor.getImage()%>"
+							alt="Tutor" id="circle"></li>
+							</ul>
+							</td>
+						<td width="80%">
+						<ul id="ulstyle">
+						<li><p id="listyle">Name : </p><p id="listylevalues"><%=tutor.getName()%></p></li>
+						<li><p id="listyle">Expertise : </p><p id="listylevalues"><%=tutor.getSubjects()%></li>
+						<li><p id="listyle">Available : </p><p id="listylevalues"><%=tutor.getAvailable()%></li>
+						<li><p id="listyle"></p><p id="listylevalues"><%=tutor.getMode()%></li>
+					
+						</ul></td>
+						<td width="10%">
+					 
+						
+						<a id="button" href="ChildCareDetails.jsp?index=<%=index%>" style="text-decoration: none" target="_blank">View Details</a>
+						
+				</td>
+			</tr>
+			
+			  <% index++;} %>
+			  </table>
+			   		</form>
+				</article>	
+	</div>
 </body>
 </html>
