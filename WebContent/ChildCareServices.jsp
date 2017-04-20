@@ -140,10 +140,6 @@ function displayMyChildCareList() {
 			  <% 
 			    while(tutor_iterator.hasNext()){
 			    	ChildCareProviderVO tutor = (ChildCareProviderVO)tutor_iterator.next();
-			    	System.out.println("TutorNAme"+tutor.getName());
-			    	System.out.println("TutorID"+tutor.getIdChildCare());
-			    	System.out.println("Tutorcategoryid"+tutor.getCategoryid());
-			    	System.out.println("Tutorimage"+tutor.getImage());
 			    	
 			    	%>
 			    			  				   

@@ -104,7 +104,7 @@ function displayMyChildCareList() {
 			<li>
 				<div class=display-heading">
 				<a href="#" onclick="displayMyGroceriesList();" id="myGroceries"><u>GROCERIES</u></a>
-					<div class="" id="myGroceriesList" style="display:none;">
+					<div class="contents-display" id="myGroceriesList" style="display:none;">
 					<form action="Groceries.jsp" method="post">
 			      		<button formaction="GroceryDetailsServlet" id="veg_id" name="categoryid" value="1">Vegetables</button>
 			      		<button formaction="GroceryDetailsServlet" id="" name="categoryid" value="2">Fruits</button>
@@ -120,7 +120,7 @@ function displayMyChildCareList() {
 			</li>
 			<li class="">
 				<a href="#" onclick="displayMyRepairList();" id="myRepairs" class=""><u>REPAIR & MAINTENANCE</u></a>
-					<div class="" id="myRepairsList" style="display:none;">
+					<div class="contents-display" id="myRepairsList" style="display:none;">
 			      		<form action="RepairAndMaintenanceServlet" method="get">
 							<button type="submit" name="categoryId" value="9" >HouseKeeping</button>
 			      			<button type="submit" name="categoryId" value="10" >Plumbing</button>
@@ -131,7 +131,7 @@ function displayMyChildCareList() {
 			</li>
 			<li class="">
 				<a href="#" onclick="displayMyChildCareList();" id="myCares" class=""><u>CHILD CARE SERVICES</u></a>
-					<div class="" id="myCaresList" style="display:none;">
+					<div class="contents-display" id="myCaresList" style="display:none;">
 			      		<form action="ChildCareServices.jsp" method="get">
 					    	<button type="submit" formaction="ChildCareServlet" name="categoryId" value="13" >Tutors</button>
 			      			<button type="submit" formaction="ChildCareServlet" name="categoryId" value="14">Baby-sitters</button>
