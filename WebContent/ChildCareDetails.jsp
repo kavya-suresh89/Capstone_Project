@@ -61,8 +61,6 @@ tr:nth-child(even){background-color: #f2f2f2}
 						<tr><td id="ullistyleborder">Price per hour:</td><td id="ullistyleborder"><%=tutor.getPrice_per_hour()%></td></tr>
 						<tr><td id="ullistyleborder">Location : </td><td id="ullistyleborder"><%=tutor.getLocation()%></td></tr>
 						<tr><td id="ullistyleborder">Experience:</td><td id="ullistyleborder"><%=tutor.getExperience()%></td></tr>
-						<tr><td id="ullistyleborder">Contact#: </td><td id="ullistyleborder"><%=tutor.getPhonenumber()%></td></tr>
-						<tr><td id="ullistyleborder">Email : </td><td id="ullistyleborder"><%=tutor.getEmail()%></td></tr>
 						  </table>
 						  <div class="center">
 						<input type="button" value="Contact <%=ChildCare%>" class="buttonstyle" onclick="alert('Thanks for contacting <%=tutor.getName()%>.We have informed the child care provider about your interest.Our provider will Contact you shortly based on their Availability.')"></div>

@@ -73,9 +73,13 @@ input, textarea {
 	color: #4D5656;
 }
 
-table{
+table,th{
 border  : 1px solid black;
 border-collapse: collapse;
+}
+
+th{
+height : 50px;
 }
 
 </style>
@@ -180,21 +184,21 @@ function displayMyCategoryItems() {
 			</li>
 			<li class="">
 				<a href="#" onclick="displayMyRepairList();" id="myRepairs" class=""><u>REPAIR & MAINTENANCE</u></a>
-					<div class="contents-display" id="myRepairsList" style="display:none;">
-			      		<form action="RepairAndMaintenance.jsp" method="get">
-							<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >HouseKeeping</button>
-			      			<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >Plumbing</button>
-			      			<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >Heating & Cooling</button>
-			      			<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >Electric</button>
+					<div class="" id="myRepairsList" style="display:none;">
+			      		<form action="RepairAndMaintenanceServlet" method="get">
+							<button type="submit" name="categoryId" value="9" >HouseKeeping</button>
+			      			<button type="submit" name="categoryId" value="10" >Plumbing</button>
+			      			<button type="submit" name="categoryId" value="11" >Heating & Cooling</button>
+			      			<button type="submit" name="categoryId" value="12" >Electric</button>
 			    	  </form>
 			    	</div>
 			</li>
 			<li class="">
 				<a href="#" onclick="displayMyChildCareList();" id="myCares" class=""><u>CHILD CARE SERVICES</u></a>
-					<div class="contents-display" id="myCaresList" style="display:none;">
+					<div class="" id="myCaresList" style="display:none;">
 			      		<form action="ChildCareServices.jsp" method="get">
-					    	<button type="submit" formaction="ChildCareServices.jsp" id="" >Tutors</button>
-			      			<button type="submit" formaction="BabySitters.jsp" id="" >Baby-sitters</button>
+					    	<button type="submit" formaction="ChildCareServlet" name="categoryId" value="13" >Tutors</button>
+			      			<button type="submit" formaction="ChildCareServlet" name="categoryId" value="14">Baby-sitters</button>
 			      	  </form>		
 			    	</div>
 			</li>
@@ -210,6 +214,7 @@ function displayMyCategoryItems() {
 <div class="table-head">
 
 <table width="900px" style="background-color: #EAEDED">
+<tr><th colspan="5" align="center">ORDER SUMMARY</th></tr>
 <tr>
 <td>Order Placed</td>
 <td>Total Price</td>
@@ -237,9 +242,9 @@ function displayMyCategoryItems() {
 		%>
 		<tr height="30px;" style="border: 1px solid black; border-collapse: collapse;">
 		<td style="font-size: 20px;"><%=sc.getProduct_name()%></td>
-		<td><%=sc.getQuantity() %></td>
-		<td><%=sc.getProduct_price() %></td>
-		<td colspan="2"><%=sc.getCount() %></td>
+		<td><%=sc.getQuantity() %> / Item</td>
+		<td><%=sc.getProduct_price() %> / Item </td>
+		<td colspan="2"><%=sc.getCount() %> Items</td>
 		</tr>
 		<%
 		}

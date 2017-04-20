@@ -22,7 +22,7 @@
 </table>
 <center>
 
-<form action="registerCareProvidersServlets" method="post" id="register_form">
+<form action="RegisterCareProvidersServlets" method="post" id="register_form" enctype="multipart/form-data">
 	<table  width="40%" cellpadding="3" >
 		<tr>
 			<h5 style="color:black">
@@ -41,8 +41,13 @@
         	<td>Provider Category</td>
         	<td><select name="cateogy_id" style="width:95%">
         		<option value="">-------------------Select-------------------</option>
+        		<option value="9">Housekeeping</option>
+        		<option value="10">Plumbing</option>
+        		<option value="11">Heating & Cooling</option>
+        		<option value="12">Electric</option>
         		<option value="13">Tutors</option>
         		<option value="14">Baby-Sitters</option>
+        		
         	</select></td>
     	</tr>
     
@@ -53,7 +58,7 @@
     
    	 	<tr>
         	<td>Price per Hour</td>
-        	<td><input type="text" name="per_hour_price" style="width:95%"></td>
+        	<td><input type="text" name="per_hour_price" style="width:95%" placeholder="$2.34 / hr"></td>
    	 	</tr>
     
     	<tr>
@@ -63,7 +68,7 @@
     
     	<tr>
         	<td>Experience</td>
-        	<td><input type="text" name="exp_years" style="width:95%"></td>
+        	<td><input type="text" name="exp_years" style="width:95%" placeholder="x years"></td>
     	</tr>
     
     	<tr>

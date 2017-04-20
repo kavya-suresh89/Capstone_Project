@@ -1,13 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.io.*,java.util.ArrayList,java.util.Iterator,com.edu.capstone.vo.*" %>
+    pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.util.ArrayList,java.util.Iterator,com.edu.capstone.vo.*" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>At Your Service</title>
-</head>
 <link rel="stylesheet" type="text/css" href="style.css">
+
+
+<style type="text/css">
+button{
+	background-color: #cdc9c9;
+	color: #4c4c4c;
+	height:35px;
+	width:100%;
+}
+
+</style>
 
 <script type="text/javascript">
 function displayMyGroceriesList() {
@@ -48,63 +59,66 @@ function displayMyChildCareList() {
         x.style.display = 'none';
     }
 }
-</script>
-<style type="text/css">
 
-</style>
+
+
+
+</script>
 </head>
 <body>
-	<div class="container">
-
-		<header>
-		<h3>At Your Service...</h3>
-		</header>
+<div class="container">
 
 
-		<nav>
-		<ul>
-			<li><a href="HomePage.jsp"><u>HOME</u></a></li>
-			<li><a href="#" onclick="displayMyGroceriesList();"
-				id="myGroceries"><u>GROCERIES</u></a>
-				<div class="" id="myGroceriesList" style="display: none;">
-					<form action="Groceries.jsp" method="get">
-						<button formaction="" id="">Vegetables</button>
-						<button formaction="Fruits.jsp" id="">Fruits</button>
-						<button formaction="" id="">Dairy Products</button>
-						<button formaction="" id="">Meat</button>
-						<button formaction="" id="">Snacks</button>
-						<button formaction="" id="">Bread & Bakery</button>
-						<button formaction="" id="">Cereal</button>
-						<button formaction="" id="">Canned & Packaged Foods</button>
-					</form>
-				</div></li>
-			<li class=""><a href="#" onclick="displayMyRepairList();"
-				id="myRepairs" class=""><u>REPAIR & MAINTENANCE</u></a>
-				<div class="" id="myRepairsList" style="display: none;">
-					<form action="RepairAndMaintenance.jsp" method="get">
-						<button type="submit" formaction="RepairAndMaintenance.jsp" id="">HouseKeeping</button>
-						<button type="submit" formaction="RepairAndMaintenance.jsp" id="">Plumbing</button>
-						<button type="submit" formaction="RepairAndMaintenance.jsp" id="">Heating
-							& Cooling</button>
-						<button type="submit" formaction="RepairAndMaintenance.jsp" id="">Electric</button>
-					</form>
+<header>
+   <h3>At Your Service...</h3>
+</header>
 
-				</div></li>
-			<li class=""><a href="#" onclick="displayMyChildCareList();"
-				id="myCares" class=""><u>CHILD CARE SERVICES</u></a>
-				<div class="" id="myCaresList" style="display: none;">
-					<form action="ChildCareServices.jsp" method="get">
-						<button type="submit" formaction="ChildCareServices.jsp" id=""
-							style="background-color: #fff; color: #999999; height: 35px; width: 100%;">Tutors</button>
-						<button type="submit" formaction="BabySitters.jsp" id=""
-							style="background-color: #fff; color: #999999; height: 35px; width: 100%;">Baby-sitters</button>
-					</form>
-				</div></li>
-		</ul>
-		</nav>
+
+<nav>
+	<ul>
+		<li><a  href="HomePage.jsp"><u>HOME</u></a></li>
+			<li>
+				<div class=display-heading">
+				<a href="#" onclick="displayMyGroceriesList();" id="myGroceries"><u>GROCERIES</u></a>
+					<div class="" id="myGroceriesList" style="display:none;">
+					<form action="Groceries.jsp" method="post">
+			      		<button formaction="GroceryDetailsServlet" id="veg_id" name="categoryid" value="1">Vegetables</button>
+			      		<button formaction="GroceryDetailsServlet" id="" name="categoryid" value="2">Fruits</button>
+			      		<button formaction="GroceryDetailsServlet" id="" name="categoryid" value="3">Dairy Products</button>
+			      		<button formaction="GroceryDetailsServlet" id="" name="categoryid" value="4">Meat</button>
+			      		<button formaction="GroceryDetailsServlet" id="" name="categoryid" value="5">Snacks</button>
+			      		<button formaction="GroceryDetailsServlet" id="" name="categoryid" value="6">Bread & Bakery</button>
+			      		<button formaction="GroceryDetailsServlet" id="" name="categoryid" value="7">Cereal</button>
+			      		<button formaction="GroceryDetailsServlet" id="" name="categoryid" value="8">Canned & Packaged Foods</button>
+			      	  </form>
+			    	</div>
+			    	</div>
+			</li>
+			<li class="">
+				<a href="#" onclick="displayMyRepairList();" id="myRepairs" class=""><u>REPAIR & MAINTENANCE</u></a>
+					<div class="" id="myRepairsList" style="display:none;">
+			      		<form action="RepairAndMaintenanceServlet" method="get">
+							<button type="submit" name="categoryId" value="9" >HouseKeeping</button>
+			      			<button type="submit" name="categoryId" value="10" >Plumbing</button>
+			      			<button type="submit" name="categoryId" value="11" >Heating & Cooling</button>
+			      			<button type="submit" name="categoryId" value="12" >Electric</button>
+			    	  </form>
+			    	</div>
+			</li>
+			<li class="">
+				<a href="#" onclick="displayMyChildCareList();" id="myCares" class=""><u>CHILD CARE SERVICES</u></a>
+					<div class="" id="myCaresList" style="display:none;">
+			      		<form action="ChildCareServices.jsp" method="get">
+					    	<button type="submit" formaction="ChildCareServlet" name="categoryId" value="13" >Tutors</button>
+			      			<button type="submit" formaction="ChildCareServlet" name="categoryId" value="14">Baby-sitters</button>
+			      	  </form>		
+			    	</div>
+			</li>
+	</ul>
+</nav>
 
 		<article>
-		<h3>TUTORS</h3>
+		
 
 	<form id="tutors" action="ChildCareServlet" method="get">
 			   <table width="100%">	
@@ -114,6 +128,16 @@ function displayMyChildCareList() {
 			    Iterator<ChildCareProviderVO> tutor_iterator= tutors.iterator();
 			    int index=0;
 			   session.setAttribute("tutorlist", tutors);
+			   String ChildCare = "";
+		    	if (tutors.get(0).getCategoryid()==13){
+		    		ChildCare = "Tutors";
+		    	}
+		    	else if (tutors.get(0).getCategoryid()==14){
+		    		ChildCare = "BabySitters";
+		    	}%>
+		    	 <div class="center">
+		    	<h3><%=ChildCare%></h3>
+			  <% 
 			    while(tutor_iterator.hasNext()){
 			    	ChildCareProviderVO tutor = (ChildCareProviderVO)tutor_iterator.next();
 			    	System.out.println("TutorNAme"+tutor.getName());

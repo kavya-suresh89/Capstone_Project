@@ -30,7 +30,7 @@ import com.edu.capstone.DAO.RegisterProviderDetailsDAO;
 import com.edu.capstone.vo.ChildCareProviderVO;
 
 import sun.misc.FormattedFloatingDecimal.Form;
-@WebServlet
+@WebServlet("/RegisterCareProvidersServlets")
 @MultipartConfig
 public class RegisterCareProvidersServlets extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -72,6 +72,7 @@ public class RegisterCareProvidersServlets extends HttpServlet {
 		}
 		providerVO.setAvailable(request.getParameter("available"));
 		providerVO.setMode(request.getParameter("mode_of_teach"));
+		response.setContentType("image/jpeg");
 		 Part part = request.getPart("photo_provider");
 		 
 		//photo =request.getParameter("photo_provider");

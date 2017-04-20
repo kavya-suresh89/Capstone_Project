@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import com.edu.capstone.vo.ChildCareProviderVO;
 /**
  * Servlet implementation class ChildCareService
  */
+@WebServlet("/ChildCareServlet")
 public class ChildCareServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

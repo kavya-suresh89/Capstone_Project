@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="java.util.ArrayList,java.util.Iterator,com.edu.capstone.vo.*" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,41 +12,15 @@
 
 <style type="text/css">
 button{
-	background-color: #E5E7E9;
-	color: #555;
-	font-size: 15px;
-	font-family: sans-serif;
+	background-color: #cdc9c9;
+	color: #4c4c4c;
 	height:35px;
 	width:100%;
 }
 
-td{
-		width : 30px;
-		text-align: center;
-		padding: 10px;
-		
-	}
-	tr{
-		border: 1px solid black;
-	}
-	p{
-		color: #555;
-		font-size: 15px; 
-		font-family: sans-serif;
-	}
-	th{
-	height: 30px;
-	}
-	
-	table ,td,tr{
-	
-	border : 1px solid black;
-	}
-
 </style>
 
 <script type="text/javascript">
-window.scrollBy(0, 600);
 function displayMyGroceriesList() {
 	var x = document.getElementById('myGroceriesList');
 	var z = document.getElementById('myRepairsList');
@@ -84,6 +59,7 @@ function displayMyChildCareList() {
         x.style.display = 'none';
     }
 }
+
 
 
 
@@ -138,63 +114,72 @@ function displayMyChildCareList() {
 			      	  </form>		
 			    	</div>
 			</li>
-			
 	</ul>
 </nav>
-<article>
-	<div>
-		<table width="900px">
-			<tr>
-			<td colspan="5" style="border: 1px solid black;background-color: #AED6F1">CART DETAILS</td>
-			<input type="hidden" name="user_id" value="<%=session.getAttribute("user_id") %>">
+
+		<article>
+		
+		
+
+	<form id="tutors" action="RepairAndMaintenanceServlet" method="get">
+			   <table width="100%">	
+					 <%
+			  @SuppressWarnings("unchecked")
+			  ArrayList<ChildCareProviderVO> tutors = (ArrayList<ChildCareProviderVO>)request.getAttribute("childCareList");
+			    Iterator<ChildCareProviderVO> tutor_iterator= tutors.iterator();
+			    int index=0;
+			    
+			    String ChildCare = "";
+		    	if (tutors.get(0).getCategoryid()==9){
+		    		ChildCare = "HouseKeeping";
+		    	}
+		    	else if (tutors.get(0).getCategoryid()==10){
+		    		ChildCare = "Plumbing";
+		    	}
+		    	else if (tutors.get(0).getCategoryid()==11){
+		    		ChildCare = "Heating & Cooling";
+		    	}
+		    	else if (tutors.get(0).getCategoryid()==12){
+		    		ChildCare = "Electric";
+		    	}
+		    	%>
+		    	 <div class="center">
+		    	<h3><%=ChildCare%></h3>
+			  <%  session.setAttribute("tutorlist", tutors);
+			    while(tutor_iterator.hasNext()){
+			    	ChildCareProviderVO tutor = (ChildCareProviderVO)tutor_iterator.next();
+			    	%>	
+			    				  				   
+			   	<tr>
+				<td width="10%">
+				
+					<ul  id="ulstyleimg">
+		
+							<li><img
+							src="data:image/gif;base64,<%=tutor.getImage()%>"
+							alt="Tutor" id="circle"></li>
+							</ul>
+							</td>
+						<td width="80%">
+						<ul id="ulstyle">
+						<li><p id="listyle">Name : </p><p id="listylevalues"><%=tutor.getName()%></p></li>
+						<li><p id="listyle">Price Per Hour : </p><p id="listylevalues"><%=tutor.getPrice_per_hour()%></p></li>
+						<li><p id="listyle">Location : </p><p id="listylevalues"><%=tutor.getLocation()%></p></li>
+						<li><p id="listyle">Experience : </p><p id="listylevalues"><%=tutor.getExperience()%></p></li>
+						<li><p id="listyle">Description : </p><p id="listylevalues"><%=tutor.getDescription()%></p></li>
+						<li><p id="listyle">Available : </p><p id="listylevalues"><%=tutor.getAvailable()%></li>
+					
+						</ul></td>
+						<td width="10%">
+					 
+						
+				</td>
 			</tr>
 			
-			<tr >
-			<th ><p><u>Product Name</u></p></th>
-			<th><p><u>Price per unit</u></p></th>
-			<th><p><u>Quantity per unit</u></p></th>
-			<th><p><u>Count</u></p></th>
-			<th><p><u>Remove From Cart</u></p></th>
-			</tr>
-			<% 
-			@SuppressWarnings("unchecked")
-				ArrayList<ShoppingCartVO> cart = (ArrayList<ShoppingCartVO>)session.getAttribute("cart_order"); 
-				for(ShoppingCartVO shop : cart){
-				
-			 %>
-			 <form action="RemoveCartItemServlet" method="post">
-			 <tr>
-			   <td><p  class="cart_product_name" name="cart_product_name"><%=shop.getProduct_name() %></p></td>
-			   <td><p  class="cart_product_name" name="cart_product_price"><%=shop.getProduct_price() %></p></td>
-			   <td><p  class="cart_product_name" name="cart_product_quantity"><%=shop.getQuantity() %></p></td>
-			   <td><p  class="cart_product_count" name="cart_product_count"><%=shop.getCount() %></p></td>
-			   <td><input type="submit" name="Submit"  value="Remove" style="width :60%;background-color: #FADBD8"></input></td>
-			 <input type="hidden" name="product_id" value="<%=shop.getProduct_id()%>">
-			 </form>
-			 <%} %>
-			 
-			 <tr>
-			 <td colspan="2"><b>Total number of items</b></td>
-			 <td colspan="3"><p name="number_of_items"><b><%=session.getAttribute("number_of_items") %> </b></p> 
-			 <input type="hidden" name="number_of_items" value="<%=session.getAttribute("number_of_items")%>">
-			 </td>
-			 </tr>
-			 <tr>
-			 <td colspan="2"><b>Total Price</b></td>
-			 <td colspan="3"><p name="total_price"><b> $ <%=session.getAttribute("total_price") %> </b></p> </td>
-			 <input type="hidden" name="total_price" value="<%=session.getAttribute("total_price")%>">
-			 </tr>
-			 <form action="SaveCartSummaryServlet" method="post">
-			<tr>
-				<td colspan="5" align="center"><input  type="submit" value="Proceed to Check Out" style="background-color: #F0B27A; width: 200px; height: 40px"></td>
-			</tr>
-			<input type="hidden" name="user_id" value="<%=session.getAttribute("user_id")%>">
-			<input type="hidden" name="session_id" value="<%=session.getAttribute("session_id") %>">
-			</form>
-		</table>
+			  <% index++;} %>
+			  </table>
+			   		</form>
+				</article>	
 	</div>
-
-</article>
-
 </body>
 </html>

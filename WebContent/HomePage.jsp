@@ -61,7 +61,7 @@ function displayMyChildCareList() {
 }
 
 
-</script>
+
 
 </script>
 </head>
@@ -97,11 +97,11 @@ function displayMyChildCareList() {
 			<li class="">
 				<a href="#" onclick="displayMyRepairList();" id="myRepairs" class=""><u>REPAIR & MAINTENANCE</u></a>
 					<div class="" id="myRepairsList" style="display:none;">
-			      		<form action="RepairAndMaintenance.jsp" method="get">
-							<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >HouseKeeping</button>
-			      			<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >Plumbing</button>
-			      			<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >Heating & Cooling</button>
-			      			<button type="submit" formaction="RepairAndMaintenance.jsp" id="" >Electric</button>
+			      		<form action="RepairAndMaintenanceServlet" method="get">
+							<button type="submit" name="categoryId" value="9" >HouseKeeping</button>
+			      			<button type="submit" name="categoryId" value="10" >Plumbing</button>
+			      			<button type="submit" name="categoryId" value="11" >Heating & Cooling</button>
+			      			<button type="submit" name="categoryId" value="12" >Electric</button>
 			    	  </form>
 			    	</div>
 			</li>

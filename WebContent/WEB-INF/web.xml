@@ -12,14 +12,7 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/adminLoginServlet</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>register</servlet-name>
-    <servlet-class>com.edu.capstone.servlets.RegisterCareProvidersServlets</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>register</servlet-name>
-    <url-pattern>/registerCareProvidersServlets</url-pattern>
-  </servlet-mapping>
+  
   <servlet>
     <servlet-name>groceryDetails</servlet-name>
     <servlet-class>com.edu.capstone.servlets.GroceryDetailsServlet</servlet-class>
