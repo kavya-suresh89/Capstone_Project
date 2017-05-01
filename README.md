@@ -20,11 +20,11 @@ Hire one of our help to fix all your problems.</li>
 
 
 <u>What are the features implemented in this project ?</u>
-
-Home Page – to list all available categories 
-Groceries – list of groceries categorized according to the type.
-Repair and Maintenance – list of all available services.
-Child Care – list of Tutors and Baby-sitters.
-Admin module – to register the service care providers.
-
+<ul>
+<li>Home Page – to list all available categories</li>
+<li>Groceries – list of groceries categorized according to the type.</li>
+<li>Repair and Maintenance – list of all available services.</li>
+<li>Child Care – list of Tutors and Baby-sitters.</li>
+<li>Admin module – to register the service care providers.</li>
+</ul>
 
